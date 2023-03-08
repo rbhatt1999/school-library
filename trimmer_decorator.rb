@@ -1,4 +1,4 @@
-require './nameable'
+require './decorator'
 
 class TrimmerDecorator < Decorator
   def correct_name
