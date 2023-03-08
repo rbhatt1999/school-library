@@ -14,8 +14,7 @@ class App
 
   def start_console
     puts 'welcome to w100 school Library App!'
-    until 
-      list_of_options
+    until list_of_options
       input = gets.chomp
       if input == '7'
         puts 'Thank You for using our school Library!'
@@ -100,25 +99,22 @@ class App
     puts 'select the book you want to rent by entering it\'s number'
     @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
     book_id = gets.chomp.to_i
-    if !((0...@books.length).include?(book_id))
-      puts "sorry wrong input"
-      return
-    end
+    return puts 'sorry wrong input' unless (0...@books.length).include?(book_id)
+
     puts 'select person from the list by its number'
-    tem_person = @persons.select { |person| person.can_use_services? }
+    tem_person = @persons.select(&:can_use_services?)
     tem_person.each_with_index do |person, index|
       puts "#{index} [#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
     person_id = gets.chomp.to_i
-    if !((0...tem_person.length).include?(person_id))
-      puts "sorry wrong input"
+    unless (0...tem_person.length).include?(person_id)
+      puts 'sorry wrong input'
       return
     end
     print 'Date: '
     date = gets.chomp.to_s
     rental = Rental.new(date, tem_person[person_id], @books[book_id])
     @rentals << rental
-
     puts 'Rental created successfully'
   end
 
