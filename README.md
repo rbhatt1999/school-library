@@ -16,7 +16,13 @@
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -49,6 +55,12 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started with school-library <a name="getting-started"></a>
+> To get a local copy up and running, follow these steps.
+
+### Prerequisites
+In order to run this project you need:
+1. Ruby installed on your machine
+2. Text editor (VSCode, Sublime, Atom, etc.)
 
 ### Setup
 
@@ -57,7 +69,24 @@ Clone this [repository](https://github.com/rbhatt1999/school-library.git) to you
 ```sh
   cd my-folder
   git clone https://github.com/rbhatt1999/school-library.git 
+```
+
+### Install
+Install this project with:
+```sh
   cd school-library
+```
+
+### Usage
+Run this project with:
+```sh
+  ruby main.rb
+```
+### Run tests
+Run tests with:
+```sh
+  rspec
+  rubocop
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -68,6 +97,15 @@ Clone this [repository](https://github.com/rbhatt1999/school-library.git) to you
 - GitHub: [@rbhatt1999](https://github.com/rbhatt1999)
 - Twitter: [@Rohit_Bhatt_](https://twitter.com/Rohit_Bhatt_)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/rohitbhatt-dev/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+In the future, I would like to add the following features:
+- Add function to list books
+- Add function to add books to the library
+- Add UML diagram
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -89,5 +127,13 @@ If you like this project, Give a ⭐️.
 
 - Project from [Microverse](https://www.microverse.org/?grsf=i6yi2m) Ruby module
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
