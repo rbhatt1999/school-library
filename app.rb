@@ -99,7 +99,6 @@ class App
     puts 'select the book you want to rent by entering it\'s number'
     @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
     book_id = gets.chomp.to_i
-    return puts 'sorry wrong input' unless (0...@books.length).include?(book_id)
 
     puts 'select person from the list by its number'
     tem_person = @persons.select(&:can_use_services?)
