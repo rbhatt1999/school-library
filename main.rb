@@ -11,13 +11,13 @@ class Main
       list_of_options
       input = gets.chomp
       if input == '7'
-        puts "Thanks for using the app!"
+        puts 'Thanks for using the app!'
         break
       end
       option(input)
     end
   end
-  
+
   def list_of_options
     puts
     puts 'Please choose an option by entering a number:'
@@ -29,6 +29,7 @@ class Main
     puts '6 - list all renters for a given person id'
     puts '7 - Exit'
   end
+
   def option(input)
     case input
     when '1'
