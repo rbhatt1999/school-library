@@ -5,6 +5,19 @@ class Main
     @a1 = App.new
   end
 
+  def start_console
+    puts 'Welcome to School Library App!'
+    loop do
+      list_of_options
+      input = gets.chomp
+      if input == '7'
+        puts "Thanks for using the app!"
+        break
+      end
+      option(input)
+    end
+  end
+  
   def list_of_options
     puts
     puts 'Please choose an option by entering a number:'
