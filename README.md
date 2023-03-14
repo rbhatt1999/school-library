@@ -98,6 +98,12 @@ Run tests with:
 - Twitter: [@Rohit_Bhatt_](https://twitter.com/Rohit_Bhatt_)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/rohitbhatt-dev/)
 
+👤 **Wahaj Ali**
+
+- GitHub: [@Wahaj-Ali](https://github.com/Wahaj-Ali)
+- Twitter: [@Ali96Wahaj](https://twitter.com/Ali96Wahaj)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/wahaj-ali96/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
