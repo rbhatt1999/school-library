@@ -13,6 +13,7 @@ class App
     @rentals = []
     read_person
     read_books
+    read_rentals
   end
 
   def list_all_books
@@ -108,6 +109,7 @@ class App
     date = gets.chomp.to_s
     rental = Rental.new(date, tem_person[person_id], @books[book_id])
     @rentals << rental
+    save_rentals
     puts 'Rental created successfully'
   end
 
