@@ -2,7 +2,7 @@
   {
     "occupation": "Student",
     "name": "rohit",
-    "age": 24,
+    "age": 12,
     "parent_permission": false
   },
   {
@@ -10,5 +10,11 @@
     "name": "Rajeev",
     "age": 24,
     "specialization": "Maths"
+  },
+  {
+    "occupation": "Student",
+    "name": "ramesh",
+    "age": 24,
+    "parent_permission": false
   }
 ]

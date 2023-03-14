@@ -17,11 +17,13 @@ def save_persons
       }
     end
   end
-  unless File.exist?('people.json')
-    File.new("people.json" , "w")
-  end
-  File.open('./data/people.json', 'w') do |file|
-    file.puts(JSON.pretty_generate(person_store))
+  open_file('./data/people.json', person_store)
+end
+
+def open_file(directory, file_name)
+  File.new(directory, 'w') unless File.exist?(directory)
+  File.open(directory, 'w') do |file|
+    file.puts(JSON.pretty_generate(file_name))
   end
 end
 
@@ -30,11 +32,12 @@ def read_person
     File.open('./data/people.json', 'r') do |file|
       person_store = JSON.parse(file.read)
       person_store.each do |person|
-        if person['occupation'] == 'Student'
-          @persons << Student.new(age: person['age'], name: person['name'], parent_permission: person['parent_permission'])
-        else
-          @persons << Teacher.new(person['specialization'], person['age'], person['name'])
-        end
+        @persons << if person['occupation'] == 'Student'
+                      Student.new(age: person['age'], name: person['name'],
+                                  parent_permission: person['parent_permission'])
+                    else
+                      Teacher.new(person['specialization'], person['age'], person['name'])
+                    end
       end
     end
   else
@@ -49,9 +52,7 @@ def save_books
       author: book.author
     }
   end
-  unless File.exist?('./data/books.json')
-    File.new('./data/books.json', 'w')
-  end
+  File.new('./data/books.json', 'w') unless File.exist?('./data/books.json')
   File.open('./data/books.json', 'w') do |file|
     file.puts(JSON.pretty_generate(book_store))
   end
@@ -78,13 +79,12 @@ def save_rentals
       book_index: @books.index(rental.book)
     }
   end
-  unless File.exist?('./data/rentals.json')
-    File.new('./data/rentals.json', 'w')
-  end
+  File.new('./data/rentals.json', 'w') unless File.exist?('./data/rentals.json')
   File.open('./data/rentals.json', 'w') do |file|
     file.puts(JSON.pretty_generate(rental_store))
   end
 end
+
 def read_rentals
   if File.exist?('./data/rentals.json')
     File.open('./data/rentals.json', 'r') do |file|
