@@ -4,12 +4,16 @@ require_relative 'teacher'
 require_relative 'book'
 require_relative 'classroom'
 require_relative 'rental'
+require './data/read_write'
 
 class App
   def initialize
     @books = []
     @persons = []
     @rentals = []
+    read_person
+    read_books
+    read_rentals
   end
 
   def list_all_books
@@ -49,13 +53,14 @@ class App
     case parent_permission
     when 'n'
       student = Student.new(age: age, name: name, parent_permission: false, classroom: @classroom)
-      @persons << student
+
       puts 'Student created successfully'
     when 'y'
       student = Student.new(age: age, name: name, parent_permission: true, classroom: @classroom)
-      @persons << student
       puts 'Student created successfully'
     end
+    @persons << student
+    save_persons
   end
 
   def create_teacher
@@ -68,6 +73,7 @@ class App
     name = gets.chomp
     teacher = Teacher.new(specialization, age, name)
     @persons << teacher
+    save_persons
     puts 'Teacher created successfully'
   end
 
@@ -76,10 +82,11 @@ class App
     print 'Enter title: '
     title = gets.chomp
     print 'Enter author: '
-    author = gets
+    author = gets.chomp
     book = Book.new(title, author)
     @books.push(book)
     puts "Book #{title} created successfully."
+    save_books
   end
 
   def create_rental
@@ -102,6 +109,7 @@ class App
     date = gets.chomp.to_s
     rental = Rental.new(date, tem_person[person_id], @books[book_id])
     @rentals << rental
+    save_rentals
     puts 'Rental created successfully'
   end
 
