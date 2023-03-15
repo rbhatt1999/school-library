@@ -3,7 +3,7 @@ require_relative '../person'
 
 describe CapitalizeDecorator do
   before(:all) do
-    @person = Person.new(age: 26, name:'obama')
+    @person = Person.new(age: 26, name: 'obama')
     @capitalize = CapitalizeDecorator.new(@person)
   end
 

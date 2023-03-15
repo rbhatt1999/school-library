@@ -6,7 +6,7 @@ describe Rental do
   it 'Rental Class' do
     date = '4/2/22'
     book = Book.new('Moonshot', 'Cole')
-    person = Person.new(age:23, name:'anne')
+    person = Person.new(age: 23, name: 'anne')
     rental = Rental.new(date, person, book)
     expect(rental.person.name).to eql('anne')
     expect(rental.person.age).to eql(23)

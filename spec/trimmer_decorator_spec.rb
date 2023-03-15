@@ -3,7 +3,7 @@ require_relative '../person'
 
 describe TrimmerDecorator do
   before(:all) do
-    @person = Person.new(age: 23, name:'Jimmy Nesham')
+    @person = Person.new(age: 23, name: 'Jimmy Nesham')
     @decorator = TrimmerDecorator.new(@person)
   end
 
