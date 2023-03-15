@@ -18,7 +18,7 @@ class Person < Nameable
   end
 
   def correct_name
-    @name.correct_name
+    @name
   end
 
   def of_age?
